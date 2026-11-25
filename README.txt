@@ -5,9 +5,9 @@ Open the website on a Mac
 2. Open the extracted Playing_Through_Time folder.
 3. Double-click index.html. If macOS asks, choose Safari or Chrome.
 
-The site needs no installation or server. Its images and research PDFs are included
-in the folder and work offline. Internet access is needed only if you choose an
-“Open source record” link in the visual archive.
+The research pages, quizzes, images and PDFs are included in the folder and work
+offline. Shared comments and the AI research search need the hosted Netlify version.
+Internet access is needed for those features and for “Open source record” links.
 
 The site includes 200 preserved quiz questions. The source bank contains 51
 Chaturanga questions, 49 Pachisi questions, and 50 questions each for Gilli-Danda
@@ -29,5 +29,7 @@ Publish this site on Netlify
 2. Go to https://app.netlify.com/drop.
 3. Drag the entire extracted folder into the drop zone. Do not upload only index.html.
 
-The folder contains index.html at its root plus the assets/ and sources/ folders
-that the web page loads.
+The folder contains index.html at its root plus the assets/, sources/ and
+netlify/ folders. Deploy the whole folder through the Git-connected Netlify site
+so Netlify also builds the server functions. Static drag-and-drop hosting cannot
+run the comment and search functions. Follow README.md for the secure API key setup.

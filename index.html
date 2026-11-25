@@ -103,13 +103,65 @@ button:not(:disabled):hover{box-shadow:0 7px 20px #1b294522}
 @keyframes cursorStrike{0%{transform:rotate(0) scale(1)}55%{transform:rotate(16deg) scale(.8)}100%{transform:rotate(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
 body.wallpaper-paused:before,body.wallpaper-paused:after,body.wallpaper-paused .hero:before,body.wallpaper-paused .section:before,body.wallpaper-paused .tab-content:before,body.wallpaper-paused .library-head{animation:none!important}
+
+/* Archive search and community additions */
+#games{background:#eee4d1}#method{background:#f4eddf}#sources{background:#eee4d1}
+.search-section{background:linear-gradient(145deg,#e9dfc9,#f8f3e8 55%,#e2d6bd);border-top:1px solid #c9b68f}
+.archive-search-form{max-width:860px;padding:24px;background:#fbf7ed;border:1px solid #c9b68f;border-top:3px solid #168075;box-shadow:0 14px 36px #1b294514}
+.archive-search-form>label,.comment-compose label{display:block;color:#725823;font:700 12px system-ui;letter-spacing:.06em;margin-bottom:8px}
+.archive-search-row{display:flex;gap:10px;align-items:stretch}
+.archive-search-row input,.comment-fields-row input,.comment-fields-row select,.comment-compose textarea{width:100%;min-width:0;padding:12px 14px;border:1px solid #c9b68f;background:#fffdf7;color:#26334e;border-radius:3px;outline:none}
+.archive-search-row input:focus,.comment-fields-row input:focus,.comment-fields-row select:focus,.comment-compose textarea:focus{border-color:#168075;box-shadow:0 0 0 3px #16807520}
+.archive-search-row .btn{white-space:nowrap}
+.search-scope-note{font-size:13px;color:#667080;margin:12px 0 0}
+.search-results{max-width:860px;margin-top:18px}
+.search-answer-card{padding:22px;background:#fbf7ed;border:1px solid #c9b68f;border-left:3px solid #168075;box-shadow:0 10px 28px #1b294510;animation:archiveReveal .42s ease both}
+.search-answer-card h3{font:500 23px Georgia;color:#1b2945;margin:0 0 10px}
+.search-answer-text{white-space:pre-wrap;color:#36414a;line-height:1.75}
+.search-source-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:13px;border-top:1px solid #c9b68f}
+.search-source-links a{font:700 11px system-ui;color:#08746c;text-decoration:none;border:1px solid #c9b68f;padding:7px 9px;background:#f4eddf}
+.search-source-links a:hover{background:#e5eee7;border-color:#168075}
+.search-status{padding:14px 16px;border:1px solid #c9b68f;background:#fbf7ed;color:#4f5b60}
+.community-section{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#e8dcc4 0%,#f7f0e1 46%,#e3d6bd 100%);border-top:4px double #b99755}
+.community-section:before{content:"";position:absolute;inset:-18%;z-index:-1;pointer-events:none;opacity:.22;background:radial-gradient(ellipse at 22% 35%,#d3b66e55,transparent 35%),radial-gradient(ellipse at 78% 72%,#16807530,transparent 39%),repeating-conic-gradient(from 12deg at 50% 50%,transparent 0 8deg,#9e7b3a16 8.2deg 8.4deg,transparent 8.6deg 16deg);animation:communityDrift 38s ease-in-out infinite alternate}
+.community-shell{display:grid;grid-template-columns:minmax(290px,.85fr) minmax(0,1.15fr);max-width:1180px;border:1px solid #b99755;background:#fbf7eddd;box-shadow:0 18px 44px #1b29451c}
+.comment-compose{position:relative;padding:27px;background:linear-gradient(160deg,#fbf7edee,#efe4ccf0);border-right:1px solid #c9b68f}
+.comment-panel-mark{position:absolute;right:22px;top:19px;color:#b99755;font-size:24px;animation:markGlow 3s ease-in-out infinite}
+.comment-compose h3,.comment-board-heading h3{font:500 24px Georgia;color:#1b2945;margin:0 0 7px}
+.comment-compose>p{font-size:13px;margin:0 0 20px}
+.comment-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.comment-fields-row label span{color:#7d807b;font-weight:400;letter-spacing:0}
+.comment-fields-row input,.comment-fields-row select{display:block;margin-top:7px;font:14px Georgia}
+.comment-compose textarea{resize:vertical;min-height:118px;font:15px/1.55 Georgia;margin-top:2px}
+.comment-submit-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.comment-submit-row>span{font:11px system-ui;color:#74776f}
+.comment-feedback{min-height:20px;margin-top:10px;font:13px system-ui;color:#174e50}
+.comment-honeypot{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+.comment-board{padding:26px 28px;min-width:0}
+.comment-board-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #c9b68f}
+.comment-board-heading .smallcaps{margin-bottom:7px}
+.comment-count{white-space:nowrap;padding:6px 10px;border:1px solid #c9b68f;background:#f2ead8;color:#725823;font:700 11px system-ui}
+.comment-list{display:grid;gap:12px;max-height:520px;overflow:auto;padding:2px 5px 2px 1px}
+.comment-card{position:relative;padding:15px 16px 14px 18px;background:#fffdf7e8;border:1px solid #d5c6a4;border-left:3px solid #b99755;box-shadow:0 7px 18px #1b29450c;animation:archiveReveal .38s ease both}
+.comment-card:before{content:"";position:absolute;left:9px;top:17px;width:3px;height:3px;border-radius:50%;background:#168075;box-shadow:0 0 0 3px #1680751a}
+.comment-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px;padding-left:7px}
+.comment-card-name{font:700 13px system-ui;color:#1b2945}
+.comment-card-date{font:10px system-ui;color:#77786e;text-align:right}
+.comment-card-game{display:inline-block;margin:0 0 8px 7px;padding:3px 7px;background:#eee4d1;color:#725823;font:700 9px system-ui;letter-spacing:.06em;text-transform:uppercase}
+.comment-card-message{margin:0 0 0 7px;color:#465057;font:14px/1.65 Georgia;white-space:pre-wrap;overflow-wrap:anywhere}
+@keyframes communityDrift{from{transform:translate3d(-1.5%,0,0) rotate(-2deg)}to{transform:translate3d(1.5%,1%,0) rotate(2deg)}}
+@keyframes archiveReveal{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes markGlow{0%,100%{opacity:.55;transform:rotate(0) scale(.95)}50%{opacity:1;transform:rotate(18deg) scale(1.08)}}
+@media(max-width:850px){.community-shell{grid-template-columns:1fr}.comment-compose{border-right:0;border-bottom:1px solid #c9b68f}.comment-board{padding:23px}}
+@media(max-width:650px){.archive-search-row{flex-direction:column}.archive-search-row .btn{justify-content:center}.archive-search-form{padding:18px}.comment-fields-row{grid-template-columns:1fr}.community-section{background:linear-gradient(145deg,#eee4d1,#f7f0e1)!important}.community-section:before{opacity:.14}.comment-board-heading{align-items:flex-start;flex-direction:column}.comment-card-top{align-items:flex-start;flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){.community-section:before,.comment-panel-mark,.search-answer-card,.comment-card{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <div id="chessCursor" class="chess-cursor" aria-hidden="true"><svg viewBox="0 0 48 58" role="presentation"><defs><linearGradient id="cursorGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0bd"/><stop offset=".45" stop-color="#d5ad5e"/><stop offset="1" stop-color="#9b7130"/></linearGradient></defs><path class="cursor-shaft" d="M2 2 45 25 30 31 25 54 18 39 2 2Z"/><path class="cursor-knight-mark" d="M22 33c1-4 4-7 9-9l-1-5 5 2 2 6-4 4-5 2 5 4v7H21l4-7Z"/><circle class="cursor-eye" cx="31.8" cy="25" r="1"/></svg></div>
 <header class="topbar">
 <a class="brand" href="#home" onclick="showHome()" aria-label="Playing Through Time home"><span class="brand-emblem" aria-hidden="true">♞</span><span class="brand-wordmark">PLAYING THROUGH TIME</span></a>
-<nav class="nav"><a href="#games" onclick="showHome()">The four journeys</a><a href="#method" onclick="showHome()">About the research</a><a href="#sources" onclick="showHome()">Source library</a><button id="motionToggle" class="sound-switch" type="button" aria-pressed="true" aria-label="Pause animated wallpaper" title="Pause animated wallpaper">Wallpaper: On ◉</button><button id="soundToggle" class="sound-switch" type="button" aria-pressed="true" aria-label="Turn button sounds off" title="Turn button sounds off">Sound: On ♪</button></nav>
+<nav class="nav"><a href="#games" onclick="showHome()">The four journeys</a><a href="#method" onclick="showHome()">About the research</a><a href="#sources" onclick="showHome()">Source library</a><a id="communityLink" href="#comments" onclick="openComments();return false;">Community</a><button id="motionToggle" class="sound-switch" type="button" aria-pressed="true" aria-label="Pause animated wallpaper" title="Pause animated wallpaper">Wallpaper: On ◉</button><button id="soundToggle" class="sound-switch" type="button" aria-pressed="true" aria-label="Turn button sounds off" title="Turn button sounds off">Sound: On ♪</button></nav>
 </header>
 <div id="home">
 <section class="hero" id="homeTop">
@@ -119,6 +171,15 @@ body.wallpaper-paused:before,body.wallpaper-paused:after,body.wallpaper-paused .
 <div class="hero-actions"><a class="btn" href="#games">Explore the four journeys →</a><a class="btn secondary" href="#method">How to use this archive</a></div>
 </section>
 <main>
+<section class="section search-section" id="game-search">
+<div class="section-head"><div class="kicker">Ask the archive</div><h2>Search the four game histories</h2><p class="lead">Ask a question about Chaturanga, Pachisi or Chausar, Gilli-Danda, or Malla-Yuddha. Answers draw on the supplied research reports.</p></div>
+<form id="gameSearchForm" class="archive-search-form">
+<label for="gameSearchInput">Your research question</label>
+<div class="archive-search-row"><input id="gameSearchInput" name="question" type="search" maxlength="500" placeholder="For example: How did Chaturanga change as it spread?" required><button class="btn" type="submit">Search the archive →</button></div>
+<p class="search-scope-note">This search is limited to the four games featured in the project. Questions are processed by an AI service; do not enter private information.</p>
+</form>
+<div id="searchResults" class="search-results" aria-live="polite"></div>
+</section>
 <section class="section" id="games">
 <div class="section-head"><div class="kicker">The collection</div><h2>Choose a journey through time</h2><p class="lead">Each research library contains a historical narrative, a practical guide, a visual gallery, cultural context, a modern comparison and an optional 50-question examination.</p></div>
 <div class="game-grid" id="gameCards"></div>
@@ -131,6 +192,28 @@ body.wallpaper-paused:before,body.wallpaper-paused:after,body.wallpaper-paused .
 <section class="section" id="sources">
 <div class="section-head"><div class="kicker">Your research papers</div><h2>Read the complete original reports</h2><p class="lead">The full PDFs you supplied are included in this ZIP under <code>sources/</code>. Open or download them here when you want the complete source wording, references and appendices.</p></div>
 <div class="source-list" id="pdfLinks"></div>
+</section>
+<section class="section community-section" id="comments">
+<div class="section-head"><div class="kicker">The players' court</div><h2>Leave a note in the archive</h2><p class="lead">Share a thought or question about one of the four game journeys. Comments are visible to everyone, so please do not include private information.</p></div>
+<div class="community-shell">
+<div class="comment-compose">
+<div class="comment-panel-mark" aria-hidden="true">✦</div><h3>Add to the discussion</h3><p class="muted">A thoughtful note becomes part of the shared conversation.</p>
+<form id="commentForm">
+<div class="comment-fields-row">
+<label for="commentGame">Game topic<select id="commentGame" name="game" required><option value="chess">Chaturanga and chess</option><option value="pachisi">Pachisi, Chausar and Ludo</option><option value="cricket">Gilli-Danda and cricket</option><option value="wrestling">Malla-Yuddha and wrestling</option></select></label>
+<label for="commentName">Display name <span>(optional)</span><input id="commentName" name="name" maxlength="40" autocomplete="nickname" placeholder="Guest"></label>
+</div>
+<label for="commentMessage">Your comment<textarea id="commentMessage" name="message" maxlength="600" rows="4" placeholder="What did you find interesting?" required></textarea></label>
+<div class="comment-submit-row"><span id="commentLength">0 / 600</span><button class="btn" type="submit">Add your note →</button></div>
+<label class="comment-honeypot" aria-hidden="true" tabindex="-1">Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label>
+<div id="commentFeedback" class="comment-feedback" aria-live="polite"></div>
+</form>
+</div>
+<div class="comment-board">
+<div class="comment-board-heading"><div><div class="smallcaps">Shared reflections</div><h3>Community voices</h3></div><span id="commentCount" class="comment-count">Loading…</span></div>
+<div id="commentList" class="comment-list" aria-live="polite"><p class="muted">Gathering the latest notes…</p></div>
+</div>
+</div>
 </section>
 </main>
 </div>
@@ -432,12 +515,29 @@ function chooseAnswer(i){if(answered)return;answered=true;const q=quizzes[curren
 function nextQuestion(){if(qi<quizzes[current].length-1){qi++;renderQuestion();}else renderResults();}
 function renderResults(){const pct=Math.round(score/quizzes[current].length*100),c=document.getElementById('tabContent');c.innerHTML=`<div class="quizbox"><div class="kicker">Assessment complete</div><h2 class="result">${score} / ${quizzes[current].length} · ${pct}%</h2><p>${pct>=85?'Excellent command of the material.':pct>=65?'A good foundation — review the explanations below.':'Use the review to revisit the research and try again.'}</p><div class="progress"><span style="width:${pct}%"></span></div><h3>Answer review</h3><div class="source-list">${answers.map((a,i)=>`<div class="source-item"><strong>${i+1}. ${a.ok?'Correct':'Review this answer'}</strong><p>${quizzes[current][i][0]}</p><p class="muted">Your answer: ${quizzes[current][i][1][a.given]}<br>Correct answer: ${quizzes[current][i][1][a.correct]}<br>${a.why}</p></div>`).join('')}</div><button class="btn" onclick="startQuiz()">Retake test ↻</button> <button class="btn secondary" onclick="selectTab('history',document.querySelector('.tab'))">Return to research</button></div>`;}
 let buttonSoundOn=true,wallpaperMotionOn=true,buttonAudioContext;
+function playCommentTune(){if(!buttonSoundOn)return;try{const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return;buttonAudioContext=buttonAudioContext||new AudioContextClass();const notes=[[523.25,0,.22],[659.25,.13,.24],[783.99,.28,.32],[1046.5,.46,.48]];const play=()=>{const now=buttonAudioContext.currentTime;for(const [frequency,offset,duration] of notes){const oscillator=buttonAudioContext.createOscillator(),gain=buttonAudioContext.createGain();oscillator.type='sine';oscillator.frequency.setValueAtTime(frequency,now+offset);gain.gain.setValueAtTime(.0001,now+offset);gain.gain.exponentialRampToValueAtTime(.11,now+offset+.025);gain.gain.exponentialRampToValueAtTime(.0001,now+offset+duration);oscillator.connect(gain);gain.connect(buttonAudioContext.destination);oscillator.start(now+offset);oscillator.stop(now+offset+duration+.02);}};if(buttonAudioContext.state==='suspended')buttonAudioContext.resume().then(play).catch(()=>{});else play();}catch(error){}}
 function playButtonChime(){if(!buttonSoundOn)return;try{const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass)return;buttonAudioContext=buttonAudioContext||new AudioContextClass();const play=()=>{const now=buttonAudioContext.currentTime;for(const [frequency,level,offset,duration] of [[659,.16,0,.24],[988,.09,.025,.3],[1318,.035,.05,.34]]){const oscillator=buttonAudioContext.createOscillator(),gain=buttonAudioContext.createGain();oscillator.type='triangle';oscillator.frequency.setValueAtTime(frequency,now+offset);oscillator.frequency.exponentialRampToValueAtTime(frequency*.88,now+offset+duration);gain.gain.setValueAtTime(.0001,now+offset);gain.gain.exponentialRampToValueAtTime(level,now+offset+.014);gain.gain.exponentialRampToValueAtTime(.0001,now+offset+duration);oscillator.connect(gain);gain.connect(buttonAudioContext.destination);oscillator.start(now+offset);oscillator.stop(now+offset+duration+.01);}};if(buttonAudioContext.state==='suspended')buttonAudioContext.resume().then(play).catch(()=>{});else play();}catch(error){}}
-document.addEventListener('click',event=>{const target=event.target instanceof Element?event.target:event.target.parentElement,control=target&&target.closest('button,a,[role="button"]');if(!control||control.disabled||control.getAttribute('aria-disabled')==='true')return;const ripple=document.createElement('span');ripple.className='button-ripple';ripple.style.left=`${event.clientX||window.innerWidth/2}px`;ripple.style.top=`${event.clientY||window.innerHeight/2}px`;document.body.appendChild(ripple);setTimeout(()=>ripple.remove(),740);if(control.id==='soundToggle'){buttonSoundOn=!buttonSoundOn;control.setAttribute('aria-pressed',String(buttonSoundOn));control.textContent=buttonSoundOn?'Sound: On ♪':'Sound: Off';control.title=buttonSoundOn?'Turn button sounds off':'Turn button sounds on';control.setAttribute('aria-label',control.title);if(buttonSoundOn)playButtonChime();}else if(control.id==='motionToggle'){wallpaperMotionOn=!wallpaperMotionOn;document.body.classList.toggle('wallpaper-paused',!wallpaperMotionOn);control.setAttribute('aria-pressed',String(wallpaperMotionOn));control.textContent=wallpaperMotionOn?'Wallpaper: On ◉':'Wallpaper: Paused';control.title=wallpaperMotionOn?'Pause animated wallpaper':'Resume animated wallpaper';control.setAttribute('aria-label',control.title);playButtonChime();}else playButtonChime();},true);
+document.addEventListener('click',event=>{const target=event.target instanceof Element?event.target:event.target.parentElement,control=target&&target.closest('button,a,[role="button"]');if(!control||control.disabled||control.getAttribute('aria-disabled')==='true')return;const ripple=document.createElement('span');ripple.className='button-ripple';ripple.style.left=`${event.clientX||window.innerWidth/2}px`;ripple.style.top=`${event.clientY||window.innerHeight/2}px`;document.body.appendChild(ripple);setTimeout(()=>ripple.remove(),740);if(control.id==='soundToggle'){buttonSoundOn=!buttonSoundOn;control.setAttribute('aria-pressed',String(buttonSoundOn));control.textContent=buttonSoundOn?'Sound: On ♪':'Sound: Off';control.title=buttonSoundOn?'Turn button sounds off':'Turn button sounds on';control.setAttribute('aria-label',control.title);if(buttonSoundOn)playButtonChime();}else if(control.id==='motionToggle'){wallpaperMotionOn=!wallpaperMotionOn;document.body.classList.toggle('wallpaper-paused',!wallpaperMotionOn);control.setAttribute('aria-pressed',String(wallpaperMotionOn));control.textContent=wallpaperMotionOn?'Wallpaper: On ◉':'Wallpaper: Paused';control.title=wallpaperMotionOn?'Pause animated wallpaper':'Resume animated wallpaper';control.setAttribute('aria-label',control.title);playButtonChime();}else if(control.id==='communityLink'){return;}else playButtonChime();},true);
 const chessCursor=document.getElementById('chessCursor');
 function animateChessCursor(){if(!chessCursor)return;chessCursor.classList.remove('clicking');void chessCursor.offsetWidth;chessCursor.classList.add('clicking');setTimeout(()=>chessCursor.classList.remove('clicking'),190);}
 window.addEventListener('pointermove',event=>{if(event.pointerType!=='mouse'&&event.pointerType!=='pen')return;const target=event.target instanceof Element?event.target:null;if(target&&target.closest('input,textarea,[contenteditable="true"]')){chessCursor.classList.remove('visible');document.body.classList.remove('cursor-hover');return;}chessCursor.classList.add('visible');chessCursor.style.transform=`translate3d(${event.clientX}px,${event.clientY}px,0)`;document.body.classList.toggle('cursor-hover',!!(target&&target.closest('button,a,[role="button"]')));});
 window.addEventListener('pointerleave',()=>{chessCursor.classList.remove('visible');document.body.classList.remove('cursor-hover');});
 document.addEventListener('pointerdown',event=>{if(event.pointerType==='mouse'||event.pointerType==='pen')animateChessCursor();},true);
+
+const topicNames={chess:"Chaturanga and chess",pachisi:"Pachisi, Chausar and Ludo",cricket:"Gilli-Danda and cricket",wrestling:"Malla-Yuddha and wrestling"};
+const gameSearchForm=document.getElementById('gameSearchForm');
+const searchResults=document.getElementById('searchResults');
+function showSearchStatus(message){const node=document.createElement('div');node.className='search-status';node.textContent=message;searchResults.replaceChildren(node);}
+gameSearchForm.addEventListener('submit',async event=>{event.preventDefault();const field=document.getElementById('gameSearchInput'),button=gameSearchForm.querySelector('button[type="submit"]'),question=field.value.trim();if(!question)return;button.disabled=true;showSearchStatus('Searching the supplied research…');try{const response=await fetch('/.netlify/functions/game-search',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({question})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Search is temporarily unavailable.');const card=document.createElement('article');card.className='search-answer-card';const heading=document.createElement('h3');heading.textContent=data.inScope===false?'Outside this archive':'Research answer';const answer=document.createElement('p');answer.className='search-answer-text';answer.textContent=data.answer;card.append(heading,answer);if(Array.isArray(data.sources)&&data.sources.length){const sources=document.createElement('div');sources.className='search-source-links';for(const source of data.sources){const link=document.createElement('a');link.href=source.href;link.target='_blank';link.rel='noopener';link.textContent=`${source.title} · p. ${source.page}`;sources.append(link);}card.append(sources);}searchResults.replaceChildren(card);}catch(error){showSearchStatus(error.message||'The archive search is available on the live site. Please try again there.');}finally{button.disabled=false;}});
+const commentList=document.getElementById('commentList');
+const commentCount=document.getElementById('commentCount');
+const commentForm=document.getElementById('commentForm');
+const commentFeedback=document.getElementById('commentFeedback');
+const gameLabel={chess:"Chaturanga and chess",pachisi:"Pachisi, Chausar and Ludo",cricket:"Gilli-Danda and cricket",wrestling:"Malla-Yuddha and wrestling"};
+function renderCommentList(comments){commentList.replaceChildren();commentCount.textContent=`${comments.length} ${comments.length===1?'note':'notes'}`;if(!comments.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='No notes yet. Begin the conversation with one of the four game journeys.';commentList.append(empty);return;}for(const comment of comments){const card=document.createElement('article');card.className='comment-card';const top=document.createElement('div');top.className='comment-card-top';const name=document.createElement('strong');name.className='comment-card-name';name.textContent=comment.name||'Guest';const date=document.createElement('time');date.className='comment-card-date';date.dateTime=comment.createdAt;date.textContent=new Date(comment.createdAt).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'});top.append(name,date);const topic=document.createElement('span');topic.className='comment-card-game';topic.textContent=gameLabel[comment.game]||'Game discussion';const message=document.createElement('p');message.className='comment-card-message';message.textContent=comment.message||'';card.append(top,topic,message);commentList.append(card);}}
+async function loadComments(){commentList.replaceChildren();const loading=document.createElement('p');loading.className='muted';loading.textContent='Gathering the latest notes…';commentList.append(loading);try{const response=await fetch('/.netlify/functions/comments',{headers:{accept:'application/json'}});const data=await response.json();if(!response.ok)throw new Error(data.error||'Comments are temporarily unavailable.');renderCommentList(Array.isArray(data.comments)?data.comments:[]);}catch{commentCount.textContent='Community';const note=document.createElement('p');note.className='muted';note.textContent=location.protocol==='file:'?'Shared comments are available when this site is opened from its live Netlify address.':'Comments are temporarily unavailable. Please try again shortly.';commentList.replaceChildren(note);}}
+function openComments(){document.getElementById('home').style.display='block';document.getElementById('library').style.display='none';playCommentTune();requestAnimationFrame(()=>document.getElementById('comments').scrollIntoView({behavior:'smooth',block:'start'}));loadComments();}
+commentForm.addEventListener('submit',async event=>{event.preventDefault();const button=commentForm.querySelector('button[type="submit"]');const payload=Object.fromEntries(new FormData(commentForm).entries());payload.message=String(payload.message||'').trim();payload.name=String(payload.name||'').trim();commentFeedback.textContent='Saving your note…';button.disabled=true;try{const response=await fetch('/.netlify/functions/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const data=await response.json();if(!response.ok)throw new Error(data.error||'We could not save your note.');commentForm.reset();document.getElementById('commentLength').textContent='0 / 600';commentFeedback.textContent='Your note has joined the discussion.';await loadComments();}catch(error){commentFeedback.textContent=error.message||'Comments are available on the live Netlify site.';}finally{button.disabled=false;}});
+document.getElementById('commentMessage').addEventListener('input',event=>{document.getElementById('commentLength').textContent=`${event.target.value.length} / 600`;});
 </script>
 </body></html>
