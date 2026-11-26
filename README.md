@@ -1,27 +1,26 @@
-# Playing Through Time
+# Playing Through Time — Liquid Heritage Edition
 
-An educational archive about Chaturanga and chess, Pachisi/Chausar and Ludo, Gilli-Danda and cricket, and Malla-Yuddha and wrestling. The original page content, 200 quiz questions, images, and four supplied research PDFs are included.
+A premium dark-glass redesign of the original research website. The original research text, 200 quiz questions and scoring, four research PDFs, images, source links, shared comments, and game-only AI search are retained.
 
-## Open the website on a Mac
+## Open on a Mac
 
-1. Extract the ZIP by double-clicking it in Finder.
-2. Open the extracted `Playing_Through_Time` folder.
-3. Double-click `index.html`; choose Safari or Chrome if prompted.
+1. Double-click the ZIP to extract it.
+2. Open `Playing_Through_Time_Premium`.
+3. Double-click `index.html` to explore the research, galleries, quizzes, and PDFs.
+4. The shared comment board and AI search use Netlify Functions, so those features require the hosted deployment.
 
-The research pages, quizzes, local images, and source PDFs work offline. The shared comments and AI research search need the hosted Netlify version because they use server functions.
+## Deploy to Netlify
 
-## Netlify features
+The project includes the existing `netlify.toml`, Netlify Functions, and the Netlify Blobs comment store. Deploy through the Git-connected Netlify site so the server functions are included. Set `OPENAI_API_KEY` as a secret environment variable in Netlify's production context and redeploy. Never commit `.env.local` or put an API key in the webpage.
 
-- `netlify/functions/comments.mjs` saves and retrieves public comments using Netlify Blobs. Comment authors are told comments are public. The service stores comment text, optional display name, game topic, and posting time.
-- `netlify/functions/game-search.mjs` searches excerpts prepared from the four bundled research PDFs and answers only questions naming one of the four game topics. The OpenAI key stays in a server environment variable; it is not included in the web page or repository.
-- Search requests are sent to the OpenAI API. Do not submit private information. OpenAI API usage may incur charges.
+AI search is scoped to the four games and supplied research. OpenAI API use may incur charges. The existing local key is not included in this folder or ZIP.
 
-## Deploy
+## Contents
 
-Connect this GitHub repository to Netlify and deploy the `main` branch. The included `netlify.toml` configures the site root and function directory. In Netlify site settings, add `OPENAI_API_KEY` as a **secret environment variable** for the production deploy context, then trigger a redeploy. Never commit `.env.local` or paste the key into `index.html`.
+- `index.html`: original content and visitor interactions with the Liquid Heritage stylesheet and transition effects.
+- `assets/`: original images plus the new local design assets.
+- `sources/`: all four supplied research PDFs.
+- `netlify/functions/`: persistent comments and research-grounded game search.
+- `CREDITS.md`: image credits.
 
-Netlify Blobs is used for shared comments. A static drag-and-drop upload of only the site files will not deploy the server functions; use the Git-connected Netlify site or Netlify CLI deployment.
-
-For local function development, install Node.js 20 or newer and run `npm install` followed by `npx netlify dev` in this folder. Set `OPENAI_API_KEY` in a local `.env` file for local AI search; keep it out of Git.
-
-The four original reports are in `sources/`. Image attribution is in `CREDITS.md`.
+The ambient medallion is a lightweight CSS 3D-style animation. Blender was not installed in the workspace, so this edition does not include a Blender-authored `.blend` model.
