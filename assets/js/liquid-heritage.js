@@ -4,7 +4,9 @@
   sculpture.id = 'heritageSculpture';
   sculpture.setAttribute('aria-hidden', 'true');
   sculpture.innerHTML = '<div class="sculpture-orbit"><div class="sculpture-disk"><span class="sculpture-knight">♞</span><span class="sculpture-mark">Chaturanga · 06th c.</span></div></div>';
-  document.body.prepend(sculpture);
+  const hero = document.querySelector('.hero');
+  if (hero) hero.append(sculpture);
+  else document.body.prepend(sculpture);
   const ambience = document.createElement('div');
   ambience.className = 'glass-ambience';
   ambience.setAttribute('aria-hidden', 'true');
