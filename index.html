@@ -156,6 +156,7 @@ body.wallpaper-paused:before,body.wallpaper-paused:after,body.wallpaper-paused .
 @media(max-width:650px){.archive-search-row{flex-direction:column}.archive-search-row .btn{justify-content:center}.archive-search-form{padding:18px}.comment-fields-row{grid-template-columns:1fr}.community-section{background:linear-gradient(145deg,#eee4d1,#f7f0e1)!important}.community-section:before{opacity:.14}.comment-board-heading{align-items:flex-start;flex-direction:column}.comment-card-top{align-items:flex-start;flex-direction:column;gap:4px}}
 @media(prefers-reduced-motion:reduce){.community-section:before,.comment-panel-mark,.search-answer-card,.comment-card{animation:none!important;scroll-behavior:auto!important}}
 </style>
+<link rel="stylesheet" href="assets/css/liquid-heritage.css">
 </head>
 <body>
 <div id="chessCursor" class="chess-cursor" aria-hidden="true"><svg viewBox="0 0 48 58" role="presentation"><defs><linearGradient id="cursorGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0bd"/><stop offset=".45" stop-color="#d5ad5e"/><stop offset="1" stop-color="#9b7130"/></linearGradient></defs><path class="cursor-shaft" d="M2 2 45 25 30 31 25 54 18 39 2 2Z"/><path class="cursor-knight-mark" d="M22 33c1-4 4-7 9-9l-1-5 5 2 2 6-4 4-5 2 5 4v7H21l4-7Z"/><circle class="cursor-eye" cx="31.8" cy="25" r="1"/></svg></div>
@@ -540,4 +541,5 @@ function openComments(){document.getElementById('home').style.display='block';do
 commentForm.addEventListener('submit',async event=>{event.preventDefault();const button=commentForm.querySelector('button[type="submit"]');const payload=Object.fromEntries(new FormData(commentForm).entries());payload.message=String(payload.message||'').trim();payload.name=String(payload.name||'').trim();commentFeedback.textContent='Saving your note…';button.disabled=true;try{const response=await fetch('/.netlify/functions/comments',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const data=await response.json();if(!response.ok)throw new Error(data.error||'We could not save your note.');commentForm.reset();document.getElementById('commentLength').textContent='0 / 600';commentFeedback.textContent='Your note has joined the discussion.';await loadComments();}catch(error){commentFeedback.textContent=error.message||'Comments are available on the live Netlify site.';}finally{button.disabled=false;}});
 document.getElementById('commentMessage').addEventListener('input',event=>{document.getElementById('commentLength').textContent=`${event.target.value.length} / 600`;});
 </script>
+<script src="assets/js/liquid-heritage.js" defer></script>
 </body></html>
